@@ -124,21 +124,23 @@ const Stake: NextPage = () => {
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>Your Unstaked NFTs</h2>
           <div className={styles.nftBoxGrid}>
-            {ownedNfts?.map((nft) => (
-              <div className={styles.nftBox} key={nft.metadata.id.toString()}>
-                <ThirdwebNftMedia
-                  metadata={nft.metadata}
-                  className={styles.nftMedia}
-                />
-                <h3>{nft.metadata.name}</h3>
-                <Web3Button
-                  contractAddress={stakingContractAddress}
-                  action={() => stakeNft(nft.metadata.id)}
-                >
-                  Stake
-                </Web3Button>
-              </div>
-            ))}
+          {!ownedNfts
+                ? "Loading..."
+                : ownedNfts?.map((nft) => (
+                  <div className={styles.nftBox} key={nft.metadata.id.toString()}>
+                    <ThirdwebNftMedia
+                      metadata={nft.metadata}
+                      className={styles.nftMedia}
+                    />
+                    <h3>{nft.metadata.name}</h3>
+                    <Web3Button
+                      contractAddress={stakingContractAddress}
+                      action={() => stakeNft(nft.metadata.id)}
+                    >
+                      Stake
+                    </Web3Button>
+                  </div>
+                ))}
           </div>
         </>
       )}
