@@ -18,6 +18,8 @@ import {
   tokenContractAddress,
 } from "../consts/contractAddresses";
 import styles from "../styles/Home.module.css";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 const Stake: NextPage = () => {
   const address = useAddress();
@@ -81,7 +83,7 @@ const Stake: NextPage = () => {
               <p className={styles.tokenValue}>
                 <b>
                   {!claimableRewards
-                    ? "Loading..."
+                    ? {Loader}
                     : ethers.utils.formatUnits(claimableRewards, 18)}
                 </b>{" "}
                 {tokenBalance?.symbol}
