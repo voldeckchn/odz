@@ -9,12 +9,12 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       {/* Top Section */}
-      <h1 className={styles.h1}>Red`&apos;`s NFT Staking</h1>
+      <h1 className={styles.h1}>Red&apos;s NFT Staking</h1>
       <div className={styles.nftBoxGrid}>
         <div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => router.push(`/mint`)}
+          onClick={() => router.push(`https://reds-dumbass-nft-f5i9nekvied4bdw9m3il.onrender.com/`)}
         >
           {/* Mint a new NFT */}
           <Image src="/icons/red.jpeg" alt="drop" width={64} height={64} />
