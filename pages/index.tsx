@@ -6,8 +6,8 @@ import styles from "../styles/Home.module.css";
 const Home: NextPage = () => {
   const router = useRouter();
 
-  const openInNewTab = (url) => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+  const openInNewTab = () => {
+    const newWindow = window.open('https://reds-dumbass-nft-f5i9nekvied4bdw9m3il.onrender.com/', '_blank', 'noopener,noreferrer')
     if (newWindow) newWindow.opener = null
 }
 
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <div
           className={styles.optionSelectBox}
           role="button"
-          onClick={() => openInNewTab(`https://reds-dumbass-nft-f5i9nekvied4bdw9m3il.onrender.com/`)}
+          onClick={() => openInNewTab()}
         >
           {/* Mint a new NFT */}
           <Image src="/icons/red.jpeg" alt="drop" width={64} height={64} />
