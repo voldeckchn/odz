@@ -109,13 +109,16 @@ const Stake: NextPage = () => {
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
           <h2>Your Staked NFTs</h2>
           <div className={styles.nftBoxGrid}>
-            {stakedTokens &&
-              stakedTokens[0]?.map((stakedToken: BigNumber) => (
-                <NFTCard
-                  tokenId={stakedToken.toNumber()}
-                  key={stakedToken.toString()}
-                />
-              ))}
+          {!stakedTokens
+                ? "Loading..."
+                : stakedTokens &&
+                  stakedTokens[0]?.map((stakedToken: BigNumber) => (
+                    <NFTCard
+                      tokenId={stakedToken.toNumber()}
+                      key={stakedToken.toString()}
+                    />
+                  ))}
+                
           </div>
 
           <hr className={`${styles.divider} ${styles.spacerTop}`} />
